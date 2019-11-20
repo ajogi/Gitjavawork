@@ -9,8 +9,12 @@ public static void main(String args[]) throws IOException{
 	
 	
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+ProductBO b=new ProductBO();
 
+  	String loop;
 
+	int i=0;
+	
 	System.out.println("Enter the product id");
 	long id=Long.parseLong(br.readLine());
 	System.out.println("Enter the product name");
@@ -21,22 +25,18 @@ BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 	int price=Integer.parseInt(br.readLine());
 	System.out.println("Do you want to enter the details of another product? Enter yes or no (not case sensitive)");
 	 
-	String loop;
-     loop=br.readLine();
-     ProductBO b=new ProductBO();
-     
-     int i=0;
-     i++;
+	loop=br.readLine(); 
+	
 do {
-	product p[]=new product[100];
-
-	 b.displayAllProductDetails(p,i);
-	p[i]=new product(id,pname,sname,price);
 	
 	}
 	
 	while(loop.equals("yes")||loop.equals("YES"));
-      
+	
+	product p[]=new product[100];
+	 i++;
+	p[i]=new product(id,pname,sname,price);
+	b.displayAllProductDetails(p,i);
      
 	}
 	
