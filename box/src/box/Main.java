@@ -2,6 +2,7 @@ package box;
 
 import java.io.*;
 import java.text.*;
+
 public class Main{
 	
 public static void main(String args[]) throws IOException{
@@ -11,10 +12,12 @@ public static void main(String args[]) throws IOException{
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 ProductBO b=new ProductBO();
 
-  	String loop;
+String loop;
+product p[]=new product[100];
 
-	int i=0;
-	
+int i=0;
+
+do {
 	System.out.println("Enter the product id");
 	long id=Long.parseLong(br.readLine());
 	System.out.println("Enter the product name");
@@ -25,20 +28,16 @@ ProductBO b=new ProductBO();
 	int price=Integer.parseInt(br.readLine());
 	System.out.println("Do you want to enter the details of another product? Enter yes or no (not case sensitive)");
 	 
-	loop=br.readLine(); 
 	
-do {
-	
-	}
-	
-	while(loop.equals("yes")||loop.equals("YES"));
-	
-	product p[]=new product[100];
-	 i++;
+	loop=br.readLine();
 	p[i]=new product(id,pname,sname,price);
-	b.displayAllProductDetails(p,i);
-     
-	}
+	i++;
+
+}
+while(loop.equals("yes")||loop.equals("YES"));
+b.displayAllProductDetails(p,i);
+
+ 	}
 	
-	}
+}
 	
