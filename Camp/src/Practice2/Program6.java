@@ -19,7 +19,7 @@ public class Program6 {
 	  public static double Electricity(int Units)
 	  {
 	   double Amount, Sur_Charge, BillAmount;
-	   if (Units <=50)
+	   if (Units <=100)
 	     {
 	      Amount = Units * 0.50;
 	      Sur_Charge = Amount*0.2;   
