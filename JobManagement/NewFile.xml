@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?noisemaker noise="sound.wav"?>
+<mail>
+<to>Chaitanya</to>
+<from>Jogi</from>
+<subject>Nothing</subject>
+<horizontal_line/>
+<body>What are you doing?</body>
+&quot;
+</mail>

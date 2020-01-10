@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<priceList>
+<tea>
+<name>tajmahal</name>
+<price>11.95</price>
+</tea>
+<coffee>
+<name>Espresso</name>
+<price>12.50</price>
+</coffee>
+</priceList>

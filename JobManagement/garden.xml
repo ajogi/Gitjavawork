@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<greens>
+	<tree>
+		<BotanicalName></BotanicalName>
+		<age></age>
+		<SuitableClimate></SuitableClimate>
+		<MedicalUse></MedicalUse>
+	</tree>
+	<plants>
+		<BotanicalName></BotanicalName>
+		<age></age>
+		<SuitableClimate></SuitableClimate>
+		<MedicalUse></MedicalUse>
+	</plants>
+	<herbs>
+		<BotanicalName></BotanicalName>
+		<age></age>
+		<SuitableClimate></SuitableClimate>
+		<MedicalUse></MedicalUse>
+	</herbs>
+</greens>
