@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="ISO-8859-1">
+
+<title>Insert title here</title>
+
+</head>
+
+<body>
+
+     <form action="User" method="post">
+
+           <h1 align="center">USER DETAILS</h1>
+
+           <table align="center">
+
+ 
+
+                <tr>
+
+                     <td>USER NAME</td>
+
+                     <td><input type="text" name="uname"></td>
+
+                </tr>
+
+                <tr>
+
+                     <td>AADHAR ID</td>
+
+                     <td><input type="text" name="aid"></td>
+
+                </tr>
+
+                <tr>
+
+                     <td>CITY</td>
+
+                     <td><input type="text" name="city"></td>
+
+                </tr>
+
+                <tr>
+
+                     <td>STATE</td>
+
+                     <td><input type="text" name="state"></td>
+
+                </tr>
+
+                <tr>
+
+                     <td>PINCODE</td>
+
+                     <td><input type="text" name="pincode"></td>
+
+                </tr>
+
+                <tr>
+
+                     <td>NUMBER OF DEPENDENTS</td>
+
+                     <td><input type="text" name="noofdep"></td>
+
+                </tr>
+
+                <tr>
+
+                      <td>OCCUPATION</td>
+
+                     <td><select name="occupation">
+
+                                <option>select</option>
+
+                                <option>Govt.employee</option>
+
+                                <option>pvt.employee</option>
+
+                                <option>labour</option>
+
+                                <option>Student</option>
+
+                     </select>
+
+                <tr>
+
+                     <td>MONTHLY SALARY(INR)</td>
+
+                     <td><input type="text" name="salary"></td>
+
+                </tr>
+
+                <tr>
+
+                     <td></td>
+
+                     <td><input type="submit" value="submit"> <input
+
+                           type="reset" value="reset"></td>
+
+                </tr>
+
+           </table>
+
+</body>
+
+</html>
+
+ 
+
+SERVELET:
+
+ 
+
+ 
+
+ 
+
+ 
+
+import java.io.IOException;
+
+import java.io.PrintWriter;
+
+import java.sql.Connection;
+
+import java.sql.DriverManager;
+
+import java.sql.PreparedStatement;
+
+import java.sql.SQLException;
+
+ 
+
+import javax.servlet.ServletException;
+
+import javax.servlet.annotation.WebServlet;
+
+import javax.servlet.http.HttpServlet;
+
+import javax.servlet.http.HttpServletRequest;
+
+import javax.servlet.http.HttpServletResponse;
+
+ 
+
+@WebServlet("/User")
+
+public class User extends HttpServlet {
+
+     private static final long serialVersionUID = 1L;
+
+ 
+
+ 
+
+     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+           String userName=request.getParameter("uname");
+
+           String s1=request.getParameter("aid");
+
+           long aadharId=Long.parseLong(s1);
+
+           String city=request.getParameter("city");
+
+           String state=request.getParameter("state");
+
+           String s2=request.getParameter("pincode");
+
+           int pincode=Integer.parseInt(s2);
+
+           String s3=request.getParameter("noofdep");
+
+           int noOfDependents=Integer.parseInt(s3);
+
+           String occupation=request.getParameter("occupation");
+
+           String s4=request.getParameter("salary");
+
+           double salary=Double.parseDouble(s4);
+
+           try {
+
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+
+                Connection cname=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "system", "system");
+
+                PreparedStatement ps=cname.prepareStatement("insert into userdetails values(?,?,?,?,?,?,?,?)");
+
+ 
+
+                ps.setString(1,userName );
+
+                ps.setLong(2,aadharId );
+
+                ps.setString(3, city);
+
+                ps.setString(4, state);
+
+                ps.setInt(5, pincode);
+
+                ps.setInt(6,noOfDependents );
+
+                ps.setString(7, occupation);
+
+                ps.setDouble(8, salary);
+
+                int result=ps.executeUpdate();
+
+                if(result>0)
+
+                {
+
+                     cname.commit();
+
+                     PrintWriter out=response.getWriter();
+
+                     out.println("registration done "+userName);
+
+ 
+
+                }
+
+ 
+
+           }
+
+           catch(ClassNotFoundException c)
+
+           {
+
+                System.out.println(c);
+
+           }
+
+           catch(SQLException s)
+
+           {
+
+                System.out.println(s);
+
+           }
+
+ 
+
+ 
+
+     }
+
+ 
+	

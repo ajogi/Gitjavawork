@@ -1,38 +1,66 @@
-import javax.servlet.ServletContext;  
-import javax.servlet.ServletContextEvent;  
-import javax.servlet.ServletContextListener;  
-import java.sql.*;  
-import java.util.ArrayList;  
-  
-public class MyListener implements ServletContextListener{  
-  
- public void contextInitialized(ServletContextEvent e) {  
-          
-  ArrayList list=new ArrayList();  
-   try{  
-    Class.forName("oracle.jdbc.driver.OracleDriver");  
-    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","jogi","rao");  
-              
-    PreparedStatement ps=con.prepareStatement("select * from csuser");  
-    ResultSet rs=ps.executeQuery();  
-    while(rs.next()){  
-     User u=new User();  
-     u.setId(rs.getInt(1));  
-     u.setName(rs.getString(2));  
-     u.setPassword(rs.getString(3));  
-     list.add(u);  
-    }  
-    con.close();  
-              
-   }catch(Exception ex){System.out.print(ex);}  
-  
-   //storing the ArrayList object in ServletContext       
-   ServletContext context=e.getServletContext();  
-   context.setAttribute("data",list);  
-          
- }  
- public void contextDestroyed(ServletContextEvent arg0) {  
-    System.out.println("project undeployed...");  
- }  
-  
-}  
+// A Java program for a Client
+import java.net.*;
+import java.io.*;
+
+// A Java program for a Server
+import java.net.*;
+import java.io.*;
+
+public class MyListener
+{
+//initialize socket and input stream
+private Socket socket = null;
+private ServerSocket server = null;
+private DataInputStream in = null;
+
+// constructor with port
+public MyListener(int port)
+{
+// starts server and waits for a connection
+try
+{
+server = new ServerSocket(port);
+System.out.println("Server started");
+
+System.out.println("Waiting for a client ...");
+
+socket = server.accept();
+System.out.println("Client accepted");
+
+// takes input from the client socket
+in = new DataInputStream(
+new BufferedInputStream(socket.getInputStream()));
+
+String line = "";
+
+// reads message from client until "Over" is sent
+while (!line.equals("Over"))
+{
+try
+{
+line = in.readUTF();
+System.out.println(line);
+
+}
+catch(IOException i)
+{
+System.out.println(i);
+}
+}
+System.out.println("Closing connection");
+
+// close connection
+socket.close();
+in.close();
+}
+catch(IOException i)
+{
+System.out.println(i);
+}
+}
+
+public static void main(String args[])
+{
+MyListener server = new MyListener(5000);
+}
+}

@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="registeruser" path="/registeruser" reloadable="true" source="org.eclipse.jst.jee.server:registeruser"/><Context docBase="getResult1" path="/getResult1" reloadable="true" source="org.eclipse.jst.jee.server:getResult1"/><Context docBase="Improvement" path="/Improvement" reloadable="true" source="org.eclipse.jst.jee.server:Improvement"/><Context docBase="WelcomeServlet1" path="/WelcomeServlet1" reloadable="true" source="org.eclipse.jst.jee.server:WelcomeServlet1"/></Host>
+      <Context docBase="registeruser" path="/registeruser" reloadable="true" source="org.eclipse.jst.jee.server:registeruser"/><Context docBase="getResult1" path="/getResult1" reloadable="true" source="org.eclipse.jst.jee.server:getResult1"/><Context docBase="Improvement" path="/Improvement" reloadable="true" source="org.eclipse.jst.jee.server:Improvement"/><Context docBase="WelcomeServlet1" path="/WelcomeServlet1" reloadable="true" source="org.eclipse.jst.jee.server:WelcomeServlet1"/><Context docBase="crud" path="/crud" reloadable="true" source="org.eclipse.jst.jee.server:crud"/><Context docBase="Term2" path="/Term2" reloadable="true" source="org.eclipse.jst.jee.server:Term2"/><Context docBase="Example" path="/Example" reloadable="true" source="org.eclipse.jst.jee.server:Example"/></Host>
     </Engine>
   </Service>
 </Server>

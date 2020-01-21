@@ -1,12 +1,81 @@
-<!DOCTYPE html>  
-<html>  
-  <head>  
-    <title>The basic building blocks of HTML</title>  
- </head>  
-  <body>  
-       <h2>The building blocks</h2>  
-       <p>This is a paragraph tag</p>  
-       <p style="color: red">The style is attribute of paragraph tag</p>  
-       <span>The element contains tag, attribute and content</span>  
-  </body>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Trainee registration Form</title>
+<link rel="stylesheet" type="text/css"href="Demo.css"/>
+</head>
+<body>
+<table>
+<tr><td>TranieeIdNo</td><td><input type="text" name="traineeIdNo"></td></tr>
+<tr><td>RA Score</td><td><input type="text" name="score"></td></tr>
+<tr><td>BatchaNO</td><td><select name="batch">
+<option value=" Batch7">Batch-07</option>
+<option value=" Batch6">Batch-06</option>
+<option value=" Batch5">Batch-05</option>
+<option value=" Batch4">Batch-04</option>
+<option value=" Batch3">Batch-03</option>
+<option value=" Batch3">Batch-02</option>
+<option value=" Batch1">Batch-01</option>
+</select></td></tr>
+<tr><td>Name</td><td><input type="text" name="name"pattern{a-z,A-Z}{5,10}></td></tr>
+<tr><td>LastName</td><td><input type="text" name="lastname"></td></tr>
+<tr><td>Gender</td><td>male <input type="radio"name="Gender"><br>
+      female<input type="radio" name="Gender">
+      </td></tr>
+<tr><td>DOB</td><td><input type="date" name="dob" value="dd/mm/yyyy">dd/mm/yyyy</td></tr>
+<tr><td>Qualification</td><td><select name="qualification">
+<option value=" select">select</option>
+<option value="BTech ">btech</option>
+<option value=" MSC">msc</option>
+<option value=" Mtech">mtech</option>
+</select>
+</td></tr>
+<tr><td>College/University</td><td><input type="text" name="clg/u"></td></tr>
+<tr><td>10th Marks</td><td><input type="text" name="10marks"></td></tr>
+<tr><td>12th Marks</td><td><input type="text" name="12thmarks"></td></tr>
+<tr><td>DegreeMarks</td><td><input type="text" name="degreemarks"></td></tr>
+<tr><td>DOJ</td><td><input type="date" name="doj"value="dd/mm/yyyy">dd/mm/yyyy</td></tr>
+<tr><td>MobileNo</td><td><input type="text" name="moble"></td></tr>
+<tr><td>EmailId</td><td><input type="text" name="email"></td></tr>
+<tr><td>Father & siblingsOccupation</td><td><input type="text" name="occupation">ex:father-lawyer Brother=SE </td></tr>
+<tr><td>Address</td><td><textarea cols="10" rows="5"  name="address"></textarea></td></tr>
+<tr><td><input type="reset" name="button" value="reset">
+<input type="submit" name="button" value="submit"></td></tr>
+</table>
+</body>
 </html>
+Demo.css
+@CHARSET "ISO-8859-1";
+body{
+ background-color:pink;
+ background:url("tri.jpg.png");
+background-size: contain;
+background-repeat:no-repeat;
+padding-right:40px;
+background-color: skyblue;
+    text-decoration: none;
+ color: white;
+ }
+table{
+ border-style:ridge;
+ font-family: arial;
+ font-style: italic;
+ color:black;
+    margin-left:auto;
+    margin-right:auto;
+ 
+ border-style: dotted;
+ 
+ background-color: #80DFFF;
+ border: 2px solid red;
+ border-top: 10px dotted;
+ border-bottom: 10px dotted #ddd;
+ border-right: 50px groove #ddd;
+ border-left: 50px inset #ddd;
+ }
+ button
+{
+ width:200%;
+ height:200%;
+}

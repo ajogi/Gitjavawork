@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping >
+ <class name="Employee" table="EMPLOYEE">
+    
+    <id name="empId">
+        <column name="EMPNO" length="5" not-null="true"></column>
+    </id>
+    
+    <property name="empName" >
+         <column name="EMPNAME" length="20" not-null="true"></column>
+     </property>
+    
+    <property name="empDept" >
+         <column name="EMPDEPT" length="20" not-null="true"></column>
+     </property>
+ 
+ </class>
+</hibernate-mapping>
