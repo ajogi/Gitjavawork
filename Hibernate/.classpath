@@ -10,7 +10,7 @@
 	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/geolatte-geom-1.3.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/hibernate-c3p0-5.3.1.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/hibernate-commons-annotations-5.0.3.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/hibernate-core-5.3.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/hibernate-core-5.3.1.Final.jar" sourcepath="C:/Users/TSSVJA/.m2/repository/org/hibernate/hibernate-core/5.3.1.Final/hibernate-core-5.3.1.Final-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/hibernate-envers-5.3.1.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/hibernate-jpamodelgen-5.3.1.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/TSSVJA/Desktop/Jogi/software/hibernatejar/hibernatejar/hibernate-osgi-5.3.1.Final.jar"/>
