@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<style>
+@import url("mystyles.css");
+input.ng-invalid {
+	background-color: pink;
+}
+
+input.ng-valid {
+	background-color: yellow;
+}
+
+
+</style>
+
+<meta charset="ISO-8859-1">
+<title>SignupForm</title>
+</head>
+<body ng-app="">
+	
+	<form action="SignUp.cs" method="post">
+		<table align="center">
+			<tr>
+				<td>Mobile</td>
+				<td><input type="text" ng-model="mobile" required name="mobile"></td>
+			</tr>
+			<tr>
+				<td>PassWord</td>
+				<td><input type="text" name="passWord" ng-model="passWord"
+					required></td>
+			</tr>
+
+			<tr>
+				<td>EmpName</td>
+				<td><input type="text" name="empName" ng-model="empName"
+					required></td>
+			</tr>
+			<tr>
+				<td>DoJ</td>
+				<td><input type="date" name="doj" ng-model="doj" required></td>
+			</tr>
+			<tr>
+				<td>Salary</td>
+				<td><input type="text" name="empSal" ng-model="empSal" required></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" class="submit" value="Register"></td>
+			</tr>
+
+
+
+		</table>
+	</form>
+</body>
+</html>
